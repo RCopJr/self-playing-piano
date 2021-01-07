@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/styles.css') }}" />
+    <!-- Allows us to use JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- You need to add the defer, or else the query selector does not work in the JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+      <div class="jumbotron text-center">
+        <h1>AI Soloist</h1>
+        <p>The deep learning piano player.</p>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-light btn-large" id="play"">
+          Play
+        </button>
+      </div>
+      <div class="piano">
+        <div data-note="C1" class="key white"></div>
+        <div data-note="C#1" class="key black"></div>
+        <div data-note="D1" class="key white"></div>
+        <div data-note="D#1" class="key black"></div>
+        <div data-note="E1" class="key white"></div>
+        <div data-note="F1" class="key white"></div>
+        <div data-note="F#1" class="key black"></div>
+        <div data-note="G1" class="key white"></div>
+        <div data-note="G#1" class="key black"></div>
+        <div data-note="A1" class="key white"></div>
+        <div data-note="A#1" class="key black"></div>
+        <div data-note="B1" class="key white"></div>
+  
+        <div data-note="C2" class="key white"></div>
+        <div data-note="C#2" class="key black"></div>
+        <div data-note="D2" class="key white"></div>
+        <div data-note="D#2" class="key black"></div>
+        <div data-note="E2" class="key white"></div>
+        <div data-note="F2" class="key white"></div>
+        <div data-note="F#2" class="key black"></div>
+        <div data-note="G2" class="key white"></div>
+        <div data-note="G#2" class="key black"></div>
+        <div data-note="A2" class="key white"></div>
+        <div data-note="A#2" class="key black"></div>
+        <div data-note="B2" class="key white"></div>
+  
+        <div data-note="C3" class="key white"></div>
+        <div data-note="C#3" class="key black"></div>
+        <div data-note="D3" class="key white"></div>
+        <div data-note="D#3" class="key black"></div>
+        <div data-note="E3" class="key white"></div>
+        <div data-note="F3" class="key white"></div>
+        <div data-note="F#3" class="key black"></div>
+        <div data-note="G3" class="key white"></div>
+        <div data-note="G#3" class="key black"></div>
+        <div data-note="A3" class="key white"></div>
+        <div data-note="A#3" class="key black"></div>
+        <div data-note="B3" class="key white"></div>
+  
+        <div data-note="C4" class="key white"></div>
+        <div data-note="C#4" class="key black"></div>
+        <div data-note="D4" class="key white"></div>
+        <div data-note="D#4" class="key black"></div>
+        <div data-note="E4" class="key white"></div>
+        <div data-note="F4" class="key white"></div>
+        <div data-note="F#4" class="key black"></div>
+        <div data-note="G4" class="key white"></div>
+        <div data-note="G#4" class="key black"></div>
+        <div data-note="A4" class="key white"></div>
+        <div data-note="A#4" class="key black"></div>
+        <div data-note="B4" class="key white"></div>
+  
+        <div data-note="C5" class="key white"></div>
+        <div data-note="C#5" class="key black"></div>
+        <div data-note="D5" class="key white"></div>
+        <div data-note="D#5" class="key black"></div>
+        <div data-note="E5" class="key white"></div>
+        <div data-note="F5" class="key white"></div>
+        <div data-note="F#5" class="key black"></div>
+        <div data-note="G5" class="key white"></div>
+        <div data-note="G#5" class="key black"></div>
+        <div data-note="A5" class="key white"></div>
+        <div data-note="A#5" class="key black"></div>
+        <div data-note="B5" class="key white"></div>
+  
+        <div data-note="C6" class="key white"></div>
+        <div data-note="C#6" class="key black"></div>
+        <div data-note="D6" class="key white"></div>
+        <div data-note="D#6" class="key black"></div>
+        <div data-note="E6" class="key white"></div>
+        <div data-note="F6" class="key white"></div>
+        <div data-note="F#6" class="key black"></div>
+        <div data-note="G6" class="key white"></div>
+        <div data-note="G#6" class="key black"></div>
+        <div data-note="A6" class="key white"></div>
+        <div data-note="A#6" class="key black"></div>
+        <div data-note="B6" class="key white"></div>
+  
+        <div data-note="C7" class="key white"></div>
+        <div data-note="C#7" class="key black"></div>
+        <div data-note="D7" class="key white"></div>
+        <div data-note="D#7" class="key black"></div>
+        <div data-note="E7" class="key white"></div>
+        <div data-note="F7" class="key white"></div>
+        <div data-note="F#7" class="key black"></div>
+        <div data-note="G7" class="key white"></div>
+        <div data-note="G#7" class="key black"></div>
+        <div data-note="A7" class="key white"></div>
+        <div data-note="A#7" class="key black"></div>
+        <div data-note="B7" class="key white"></div>
+      </div>
+
+      <audio id="C0" src="{{ url_for('static', filename='fl_notes/C0.mp3') }}"></audio>
+      <audio id="C#0" src="{{ url_for('static', filename='fl_notes/C#0.mp3') }}"></audio>
+      <audio id="D0" src="{{ url_for('static', filename='fl_notes/D0.mp3') }}"""></audio>
+      <audio id="D#0" src="{{ url_for('static', filename='fl_notes/D#0.mp3') }}"""></audio>
+      <audio id="E0" src="{{ url_for('static', filename='fl_notes/E0.mp3') }}"></audio>
+      <audio id="F0" src="{{ url_for('static', filename='fl_notes/F0.mp3') }}"></audio>
+      <audio id="F#0" src="{{ url_for('static', filename='fl_notes/F#0.mp3') }}"></audio>
+      <audio id="G0" src="{{ url_for('static', filename='fl_notes/G0.mp3') }}"></audio>
+      <audio id="G#0" src="{{ url_for('static', filename='fl_notes/G#0.mp3') }}"></audio>
+      <audio id="A0" src="{{ url_for('static', filename='fl_notes/A0.mp3') }}"></audio>
+      <audio id="A#0" src="{{ url_for('static', filename='fl_notes/A#0.mp3') }}"></audio>
+      <audio id="B0" src="{{ url_for('static', filename='fl_notes/B0.mp3') }}"></audio>
+
+      <audio id="C1" src="{{ url_for('static', filename='fl_notes/C1.mp3') }}"></audio>
+      <audio id="C#1" src="{{ url_for('static', filename='fl_notes/C#1.mp3') }}"></audio>
+      <audio id="D1" src="{{ url_for('static', filename='fl_notes/D1.mp3') }}"""></audio>
+      <audio id="D#1" src="{{ url_for('static', filename='fl_notes/D#1.mp3') }}"""></audio>
+      <audio id="E1" src="{{ url_for('static', filename='fl_notes/E1.mp3') }}"></audio>
+      <audio id="F1" src="{{ url_for('static', filename='fl_notes/F1.mp3') }}"></audio>
+      <audio id="F#1" src="{{ url_for('static', filename='fl_notes/F#1.mp3') }}"></audio>
+      <audio id="G1" src="{{ url_for('static', filename='fl_notes/G1.mp3') }}"></audio>
+      <audio id="G#1" src="{{ url_for('static', filename='fl_notes/G#1.mp3') }}"></audio>
+      <audio id="A1" src="{{ url_for('static', filename='fl_notes/A1.mp3') }}"></audio>
+      <audio id="A#1" src="{{ url_for('static', filename='fl_notes/A#1.mp3') }}"></audio>
+      <audio id="B1" src="{{ url_for('static', filename='fl_notes/B1.mp3') }}"></audio>
+
+      <audio id="C2" src="{{ url_for('static', filename='fl_notes/C2.mp3') }}"></audio>
+      <audio id="C#2" src="{{ url_for('static', filename='fl_notes/C#2.mp3') }}"></audio>
+      <audio id="D2" src="{{ url_for('static', filename='fl_notes/D2.mp3') }}"""></audio>
+      <audio id="D#2" src="{{ url_for('static', filename='fl_notes/D#2.mp3') }}"""></audio>
+      <audio id="E2" src="{{ url_for('static', filename='fl_notes/E2.mp3') }}"></audio>
+      <audio id="F2" src="{{ url_for('static', filename='fl_notes/F2.mp3') }}"></audio>
+      <audio id="F#2" src="{{ url_for('static', filename='fl_notes/F#2.mp3') }}"></audio>
+      <audio id="G2" src="{{ url_for('static', filename='fl_notes/G2.mp3') }}"></audio>
+      <audio id="G#2" src="{{ url_for('static', filename='fl_notes/G#2.mp3') }}"></audio>
+      <audio id="A2" src="{{ url_for('static', filename='fl_notes/A2.mp3') }}"></audio>
+      <audio id="A#2" src="{{ url_for('static', filename='fl_notes/A#2.mp3') }}"></audio>
+      <audio id="B2" src="{{ url_for('static', filename='fl_notes/B2.mp3') }}"></audio>
+
+      <audio id="C3" src="{{ url_for('static', filename='fl_notes/C3.mp3') }}"></audio>
+      <audio id="C#3" src="{{ url_for('static', filename='fl_notes/C#3.mp3') }}"></audio>
+      <audio id="D3" src="{{ url_for('static', filename='fl_notes/D3.mp3') }}"""></audio>
+      <audio id="D#3" src="{{ url_for('static', filename='fl_notes/D#3.mp3') }}"""></audio>
+      <audio id="E3" src="{{ url_for('static', filename='fl_notes/E3.mp3') }}"></audio>
+      <audio id="F3" src="{{ url_for('static', filename='fl_notes/F3.mp3') }}"></audio>
+      <audio id="F#3" src="{{ url_for('static', filename='fl_notes/F#3.mp3') }}"></audio>
+      <audio id="G3" src="{{ url_for('static', filename='fl_notes/G3.mp3') }}"></audio>
+      <audio id="G#3" src="{{ url_for('static', filename='fl_notes/G#3.mp3') }}"></audio>
+      <audio id="A3" src="{{ url_for('static', filename='fl_notes/A3.mp3') }}"></audio>
+      <audio id="A#3" src="{{ url_for('static', filename='fl_notes/A#3.mp3') }}"></audio>
+      <audio id="B3" src="{{ url_for('static', filename='fl_notes/B3.mp3') }}"></audio>
+
+      <audio id="C4" src="{{ url_for('static', filename='fl_notes/C4.mp3') }}"></audio>
+      <audio id="C#4" src="{{ url_for('static', filename='fl_notes/C#4.mp3') }}"></audio>
+      <audio id="D4" src="{{ url_for('static', filename='fl_notes/D4.mp3') }}"""></audio>
+      <audio id="D#4" src="{{ url_for('static', filename='fl_notes/D#4.mp3') }}"""></audio>
+      <audio id="E4" src="{{ url_for('static', filename='fl_notes/E4.mp3') }}"></audio>
+      <audio id="F4" src="{{ url_for('static', filename='fl_notes/F4.mp3') }}"></audio>
+      <audio id="F#4" src="{{ url_for('static', filename='fl_notes/F#4.mp3') }}"></audio>
+      <audio id="G4" src="{{ url_for('static', filename='fl_notes/G4.mp3') }}"></audio>
+      <audio id="G#4" src="{{ url_for('static', filename='fl_notes/G#4.mp3') }}"></audio>
+      <audio id="A4" src="{{ url_for('static', filename='fl_notes/A4.mp3') }}"></audio>
+      <audio id="A#4" src="{{ url_for('static', filename='fl_notes/A#4.mp3') }}"></audio>
+      <audio id="B4" src="{{ url_for('static', filename='fl_notes/B4.mp3') }}"></audio>
+
+      <audio id="C5" src="{{ url_for('static', filename='fl_notes/C5.mp3') }}"></audio>
+      <audio id="C#5" src="{{ url_for('static', filename='fl_notes/C#5.mp3') }}"></audio>
+      <audio id="D5" src="{{ url_for('static', filename='fl_notes/D5.mp3') }}"""></audio>
+      <audio id="D#5" src="{{ url_for('static', filename='fl_notes/D#5.mp3') }}"""></audio>
+      <audio id="E5" src="{{ url_for('static', filename='fl_notes/E5.mp3') }}"></audio>
+      <audio id="F5" src="{{ url_for('static', filename='fl_notes/F5.mp3') }}"></audio>
+      <audio id="F#5" src="{{ url_for('static', filename='fl_notes/F#5.mp3') }}"></audio>
+      <audio id="G5" src="{{ url_for('static', filename='fl_notes/G5.mp3') }}"></audio>
+      <audio id="G#5" src="{{ url_for('static', filename='fl_notes/G#5.mp3') }}"></audio>
+      <audio id="A5" src="{{ url_for('static', filename='fl_notes/A5.mp3') }}"></audio>
+      <audio id="A#5" src="{{ url_for('static', filename='fl_notes/A#5.mp3') }}"></audio>
+      <audio id="B5" src="{{ url_for('static', filename='fl_notes/B5.mp3') }}"></audio>
+  
+      <audio id="C6" src="{{ url_for('static', filename='fl_notes/C6.mp3') }}"></audio>
+      <audio id="C#6" src="{{ url_for('static', filename='fl_notes/C#6.mp3') }}"></audio>
+      <audio id="D6" src="{{ url_for('static', filename='fl_notes/D6.mp3') }}"""></audio>
+      <audio id="D#6" src="{{ url_for('static', filename='fl_notes/D#6.mp3') }}"""></audio>
+      <audio id="E6" src="{{ url_for('static', filename='fl_notes/E6.mp3') }}"></audio>
+      <audio id="F6" src="{{ url_for('static', filename='fl_notes/F6.mp3') }}"></audio>
+      <audio id="F#6" src="{{ url_for('static', filename='fl_notes/F#6.mp3') }}"></audio>
+      <audio id="G6" src="{{ url_for('static', filename='fl_notes/G6.mp3') }}"></audio>
+      <audio id="G#6" src="{{ url_for('static', filename='fl_notes/G#6.mp3') }}"></audio>
+      <audio id="A6" src="{{ url_for('static', filename='fl_notes/A6.mp3') }}"></audio>
+      <audio id="A#6" src="{{ url_for('static', filename='fl_notes/A#6.mp3') }}"></audio>
+      <audio id="B6" src="{{ url_for('static', filename='fl_notes/B6.mp3') }}"></audio>
+
+      <audio id="C7" src="{{ url_for('static', filename='fl_notes/C7.mp3') }}"></audio>
+      <audio id="C#7" src="{{ url_for('static', filename='fl_notes/C#7.mp3') }}"></audio>
+      <audio id="D7" src="{{ url_for('static', filename='fl_notes/D7.mp3') }}"""></audio>
+      <audio id="D#7" src="{{ url_for('static', filename='fl_notes/D#7.mp3') }}"""></audio>
+      <audio id="E7" src="{{ url_for('static', filename='fl_notes/E7.mp3') }}"></audio>
+      <audio id="F7" src="{{ url_for('static', filename='fl_notes/F7.mp3') }}"></audio>
+      <audio id="F#7" src="{{ url_for('static', filename='fl_notes/F#7.mp3') }}"></audio>
+      <audio id="G7" src="{{ url_for('static', filename='fl_notes/G7.mp3') }}"></audio>
+      <audio id="G#7" src="{{ url_for('static', filename='fl_notes/G#7.mp3') }}"></audio>
+      <audio id="A7" src="{{ url_for('static', filename='fl_notes/A7.mp3') }}"></audio>
+      <audio id="A#7" src="{{ url_for('static', filename='fl_notes/A#7.mp3') }}"></audio>
+      <audio id="B7" src="{{ url_for('static', filename='fl_notes/B7.mp3') }}"></audio>
+  </body>
+</html>
